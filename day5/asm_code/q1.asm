@@ -1,0 +1,25 @@
+MVI D,00H;
+MVI E,01H;
+LXI H,2000H;
+
+MOV D,M;
+
+MVI C,05H;
+
+
+LOOP:CALL FIBN
+DCR C
+JNZ LOOP
+HLT
+
+FIBN:MOV A,E;
+  	MOV E,M;
+    ADD M;
+	INX H;
+	MOV M,A;
+	RET;
+
+
+
+	
+	
