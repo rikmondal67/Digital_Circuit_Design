@@ -1,0 +1,18 @@
+;sum n natural number
+
+MVI C,03H;
+
+MVI A,00H;
+
+LXI H,2000H;
+
+LOOP:CALL SUM;
+DCR C;
+JNZ LOOP;
+
+MOV M,A
+HLT
+
+
+SUM:ADD C
+RET

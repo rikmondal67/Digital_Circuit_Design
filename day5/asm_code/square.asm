@@ -1,0 +1,19 @@
+;square finder
+
+MVI A,00H;
+LXI H,2000H;
+
+MVI B,04H;
+MOV C,B;
+
+
+CALL SQUARE;
+MOV M,A;
+HLT
+
+
+SQUARE:ADD B
+DCR C
+JNZ SQUARE
+RET
+
