@@ -1,4 +1,5 @@
 ;multiplication of series
+;1*2+2*3+4*5
 
 MVI B,01H;
 LXI H,2000H;
