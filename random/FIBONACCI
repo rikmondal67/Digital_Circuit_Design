@@ -1,0 +1,15 @@
+LXI H, 3000H    ; HL points to the start of memory location 3000H
+MVI D, 0AH      ; D = 10, which is the number of Fibonacci numbers to calculate
+MVI B, 00H      ; B = 0, the first Fibonacci number
+MVI C, 01H      ; C = 1, the second Fibonacci number
+
+FIBN:
+MOV A, B        ; A = B (First Fibonacci number)
+ADD C           ; A = A + C (Add the second Fibonacci number)
+MOV B, A        ; B = A (Update B with the new Fibonacci number)
+INX H           ; HL = HL + 1 (Move to the next memory location)
+MOV M, A        ; Store the result in memory at HL
+DCR D           ; Decrement D (remaining Fibonacci numbers to calculate)
+JNZ FIBN        ; If D != 0, repeat the loop
+
+HLT             

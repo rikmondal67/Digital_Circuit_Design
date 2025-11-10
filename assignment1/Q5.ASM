@@ -1,0 +1,20 @@
+;SUM OF FIRST N NUMBERS
+MVI C,05H;
+MVI D,00H; CARRY 
+MVI A,00H;
+MVI B,4FH; USED TO GO TO THE NEXT NUMBER
+
+LXI H,2000H;
+LOOP: ADC B;
+      JNC SKIP;
+      INR D;
+      
+      
+      
+SKIP: INR B
+      DCR C;
+      JNZ LOOP;
+MOV M,A;
+INX H;
+MOV M,D;
+HLT;      

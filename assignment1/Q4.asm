@@ -1,0 +1,19 @@
+;code for fibonacci
+LXI H,2000H
+MVI C,05H; COUNTER
+MVI M,00H
+MOV B,M
+INX H;
+MVI M,01H
+MVI A,00H
+
+LOOP:
+MOV A,B;
+ADC M;
+MOV B,M
+INX H;
+MOV M,A
+DCR C;
+JNZ LOOP;
+
+HLT
